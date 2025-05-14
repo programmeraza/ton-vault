@@ -16,7 +16,7 @@ import ChooseTokenPage from './pages/ChooseTokenPage';
 import BuyPage from './pages/BuyPage';
 import PaymentPage from './pages/PaymentPage';
 import PaymentPage2 from './pages/PaymentPage2';
-import CurrencyPage from './pages/Currencypage';
+import Currencypage from './pages/Currencypage';
 import MercuryoPage from './pages/MercuryoPage';
 import MercuryoPage2 from './pages/MercuryoPage2';
 import SellPage from './pages/SellPage';
@@ -165,7 +165,7 @@ const CurrencyPageWithNavigation = () => {
     navigate('/wallet');
   };
   
-  return <CurrencyPage onBack={goBack} onClose={goToWallet} />;
+  return <Currencypage onBack={goBack} onClose={goToWallet} />;
 };
 
 const SwapPageWithNavigation = () => {
