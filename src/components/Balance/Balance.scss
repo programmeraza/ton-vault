@@ -1,0 +1,269 @@
+.balance {
+  background-color: #131520;
+  color: white;
+  border-radius: 50px 50px 0 0;
+  padding: 154.5px; 
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  
+  @media (max-width: 768px) {
+    padding: 80px 20px 80px 20px;
+    border-radius: 30px 30px 0 0;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 50px 15px 60px 15px;
+    border-radius: 25px 25px 0 0;
+  }
+}
+
+.balance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  
+  @media (max-width: 480px) {
+    margin-bottom: 16px;
+  }
+}
+
+.balance-title {
+  display: flex;
+  align-items: center;
+  background-color: #1e2130;
+  padding: 8px 16px;
+  border-radius: 20px;
+  
+  @media (max-width: 480px) {
+    padding: 6px 12px;
+    border-radius: 16px;
+  }
+  
+  .icon-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    .money-icon {
+      font-size: 20px;
+      
+      @media (max-width: 480px) {
+        font-size: 16px;
+      }
+    }
+  }
+  
+  .arrow-down {
+    margin-left: 8px;
+    font-size: 10px;
+    opacity: 0.6;
+  }
+}
+
+.settings-icon {
+  font-size: 24px;
+  color: #8a8a8a;
+  
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
+}
+
+.balance-amount {
+  text-align: center;
+  margin-bottom: 32px;
+  
+  @media (max-width: 480px) {
+    margin-bottom: 24px;
+  }
+  
+  h1 {
+    font-size: 54px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 8px;
+    
+    @media (max-width: 768px) {
+      font-size: 42px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 32px;
+      margin-bottom: 4px;
+    }
+  }
+  
+  .wallet-id {
+    font-size: 14px;
+    color: #8a8a8a;
+    
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 16px;
+  border-bottom: 1px solid #2a2e3d;
+  
+  @media (max-width: 480px) {
+    margin-bottom: 12px;
+  }
+  
+  &:last-of-type {
+    margin-bottom: 24px;
+    
+    @media (max-width: 480px) {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0;
+  
+  @media (max-width: 480px) {
+    padding: 12px 0;
+  }
+  
+  .action-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+    
+    @media (max-width: 480px) {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+  }
+  
+  .action-text {
+    font-size: 12px;
+    color: #8a8a8a;
+    
+    @media (max-width: 480px) {
+      font-size: 10px;
+    }
+  }
+}
+
+.tokens {
+  .token-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #1e2130;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    
+    @media (max-width: 480px) {
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.token-info {
+  display: flex;
+  align-items: center;
+}
+
+.token-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-size: 20px;
+  
+  @media (max-width: 480px) {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  &.ton {
+    background-color: #0088cc;
+  }
+  
+  &.usdt {
+    background-color: #26a17b;
+  }
+}
+
+.token-details {
+  .token-name {
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    
+    @media (max-width: 480px) {
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+    
+    .token-network {
+      font-size: 10px;
+      color: #8a8a8a;
+      background-color: #2a2e3d;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+      
+      @media (max-width: 480px) {
+        font-size: 8px;
+        padding: 1px 4px;
+        margin-left: 4px;
+      }
+    }
+  }
+  
+  .token-price {
+    font-size: 12px;
+    color: #8a8a8a;
+    
+    @media (max-width: 480px) {
+      font-size: 10px;
+    }
+    
+    .positive {
+      color: #26a17b;
+    }
+  }
+}
+
+.token-balance {
+  text-align: right;
+  
+  .token-amount {
+    font-weight: 500;
+    margin-bottom: 4px;
+    
+    @media (max-width: 480px) {
+      margin-bottom: 2px;
+      font-size: 14px;
+    }
+  }
+  
+  .token-value {
+    font-size: 12px;
+    color: #8a8a8a;
+    
+    @media (max-width: 480px) {
+      font-size: 10px;
+    }
+  }
+}

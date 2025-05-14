@@ -1,0 +1,426 @@
+.choose-token-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  border-radius: 50px;
+  color: white;
+  overflow: hidden;
+  max-width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;  
+
+  .token-selector-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 16px;
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #0e131f;
+    border-radius: 50px;
+
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+
+      h1 {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+        color: white;
+      }
+
+      .close-button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .search-container {
+      position: relative;
+      margin-bottom: 20px;
+
+      .search-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 16px;
+      }
+
+      .search-input {
+        background-color: rgba(255, 255, 255, 0.07);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        padding: 12px 12px 12px 36px;
+        width: 100%;
+        font-size: 16px;
+        outline: none;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+
+    .token-section {
+      margin-bottom: 20px;
+
+      h2 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0 0 12px 0;
+        color: white;
+      }
+
+      .suggested-tokens {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+
+        .token-button {
+          background-color: rgba(255, 255, 255, 0.07);
+          border: none;
+          border-radius: 16px;
+          padding: 8px 16px;
+          display: flex;
+          align-items: center;
+          color: white;
+          cursor: pointer;
+
+          .token-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            
+            &.usdt {
+              color: #26A17B;
+            }
+            
+            &.anon {
+              color: white;
+            }
+          }
+
+          .token-symbol {
+            font-weight: 500;
+            font-size: 15px;
+          }
+        }
+      }
+
+      .other-tokens {
+        display: flex;
+        flex-direction: column;
+
+        .token-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px;
+          border-radius: 16px;
+          cursor: pointer;
+          margin-bottom: 2px;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+          }
+
+          .token-info {
+            display: flex;
+            align-items: center;
+
+            .token-icon {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-right: 12px;
+              font-size: 24px;
+              background-color: rgba(255, 255, 255, 0.1);
+              
+              &.ton {
+                background-color: #0088CC;
+                color: white;
+              }
+              
+              &.usdt {
+                background-color: #26A17B;
+                color: white;
+              }
+              
+              &.anon {
+                background-color: #111;
+                color: white;
+              }
+              
+              &.glint {
+                background-color: #6D28D9;
+                color: white;
+              }
+            }
+
+            .token-details {
+              display: flex;
+              flex-direction: column;
+
+              .token-symbol {
+                font-weight: 600;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+
+                .token-tag {
+                  background-color: rgba(255, 255, 255, 0.1);
+                  border-radius: 4px;
+                  padding: 2px 6px;
+                  font-size: 12px;
+                  margin-left: 8px;
+                  font-weight: normal;
+                  color: rgba(255, 255, 255, 0.7);
+                }
+              }
+
+              .token-name {
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.6);
+                margin-top: 2px;
+              }
+            }
+          }
+
+          .token-balance {
+            text-align: right;
+
+            .balance-amount {
+              font-weight: 600;
+              font-size: 16px;
+            }
+
+            .balance-value {
+              font-size: 14px;
+              color: rgba(255, 255, 255, 0.6);
+              margin-top: 2px;
+            }
+          }
+        }
+      }
+    }
+
+    .close-action {
+      margin-top: auto;
+      background-color: rgba(255, 255, 255, 0.07);
+      border: none;
+      border-radius: 16px;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+}
+
+.token-icon {
+  &.ton {
+    background-color: #0088CC;
+    
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  &.usdt {
+    background-color: #26A17B;
+    
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  &.anon {
+    background-color: #000;
+    
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  &.glint {
+    background-color: #6D28D9;
+    
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .choose-token-page .token-selector-container {
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .choose-token-page .token-selector-container {
+    .token-section {
+      .suggested-tokens {
+        .token-button {
+          padding: 6px 12px;
+          
+          .token-symbol {
+            font-size: 14px;
+          }
+        }
+      }
+      
+      .other-tokens {
+        .token-item {
+          padding: 12px;
+          
+          .token-info {
+            .token-icon {
+              width: 36px;
+              height: 36px;
+              font-size: 20px;
+            }
+            
+            .token-details {
+              .token-symbol {
+                font-size: 15px;
+              }
+              
+              .token-name {
+                font-size: 13px;
+              }
+            }
+          }
+          
+          .token-balance {
+            .balance-amount {
+              font-size: 15px;
+            }
+            
+            .balance-value {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .choose-token-page .token-selector-container {
+    padding: 10px;
+    
+    .header {
+      h1 {
+        font-size: 18px;
+      }
+    }
+    
+    .search-container {
+      .search-input {
+        padding: 10px 10px 10px 34px;
+        font-size: 15px;
+      }
+    }
+    
+    .token-section {
+      h2 {
+        font-size: 15px;
+      }
+      
+      .suggested-tokens {
+        gap: 6px;
+        
+        .token-button {
+          padding: 5px 10px;
+          
+          .token-icon {
+            margin-right: 6px;
+          }
+          
+          .token-symbol {
+            font-size: 13px;
+          }
+        }
+      }
+      
+      .other-tokens {
+        .token-item {
+          padding: 10px;
+          
+          .token-info {
+            .token-icon {
+              width: 32px;
+              height: 32px;
+              font-size: 18px;
+              margin-right: 8px;
+            }
+            
+            .token-details {
+              .token-symbol {
+                font-size: 14px;
+                
+                .token-tag {
+                  font-size: 10px;
+                  padding: 1px 4px;
+                }
+              }
+              
+              .token-name {
+                font-size: 12px;
+              }
+            }
+          }
+          
+          .token-balance {
+            .balance-amount {
+              font-size: 14px;
+            }
+            
+            .balance-value {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    
+    .close-action {
+      padding: 14px;
+      font-size: 15px;
+    }
+  }
+}

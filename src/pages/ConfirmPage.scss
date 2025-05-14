@@ -1,0 +1,294 @@
+.confirm-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;  
+
+  .confirm-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1024px;
+    background-color: #121722;
+    border-radius: 0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    margin: 0;
+
+    @media (max-width: 767px) {
+      max-height: 100vh;
+      height: 100%;
+      border-radius: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+
+      h1 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #FFFFFF;
+        margin: 0;
+      }
+
+      .close-button {
+        background: none;
+        border: none;
+        color: #7A7A7A;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .swap-details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1; 
+
+      .swap-amounts {
+        background: #1D2633;
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .send-row, .receive-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+
+          .token-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            .token-icon {
+              width: 32px;
+              height: 32px;
+              border-radius: 50%;
+              background-color: #2A2D3A;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              overflow: hidden;
+                
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+              
+              span {
+                color: #36CDF2;
+              }
+            }
+
+            .token-symbol {
+              font-size: 18px;
+              font-weight: 500;
+              color: #FFFFFF;
+            }
+          }
+
+          .amount {
+            font-size: 28px;
+            font-weight: 600;
+            color: #FFFFFF;
+          }
+        }
+
+        .send-row {
+          &:before {
+            content: "Send";
+            color: #777777;
+            font-size: 14px;
+            position: absolute;
+            top: -24px;
+            left: 0;
+          }
+        }
+
+        .receive-row {
+          &:before {
+            content: "Receive";
+            color: #777777;
+            font-size: 14px;
+            position: absolute;
+            top: -24px;
+            left: 0;
+          }
+        }
+
+        .swap-arrow {
+          display: flex;
+          justify-content: center;
+          color: #36CDF2;
+          font-size: 24px;
+        }
+      }
+
+      .details-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        margin-top: 8px;
+
+        .detail-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px;
+          background-color: #1D2633;
+
+          &:first-child {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+          }
+
+          &:last-child {
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+          }
+
+          .detail-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #777777;
+            font-size: 16px;
+
+            .info-icon {
+              color: #777777;
+              font-size: 16px;
+              cursor: pointer;
+            }
+          }
+
+          .detail-value {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: right; 
+          }
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 16px;
+      margin-top: auto;
+      padding-top: 24px;
+
+      button {
+        flex: 1;
+        height: 52px;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cancel-button {
+        background: #1D2633;
+        color: #FFFFFF;
+
+        &:hover {
+          background-color: #252f3f;
+        }
+      }
+
+      .confirm-button {
+        background-color: #36CDF2;
+        color: #0E0F12;
+
+        &:hover {
+          background-color: #4DD5F7;
+        }
+        
+        &:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .confirm-container {
+      padding: 16px;
+
+      .header h1 {
+        font-size: 18px;
+      }
+
+      .swap-details {
+        gap: 12px;
+
+        .swap-amounts {
+          padding: 16px;
+          gap: 16px;
+
+          .send-row, .receive-row {
+            .token-info {
+              gap: 8px;
+
+              .token-icon {
+                width: 24px;
+                height: 24px;
+              }
+
+              .token-symbol {
+                font-size: 16px;
+              }
+            }
+
+            .amount {
+              font-size: 22px;
+            }
+          }
+        }
+
+        .details-section {
+          .detail-row {
+            padding: 12px 16px;
+
+            .detail-label,
+            .detail-value {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .actions {
+        gap: 12px;
+        
+        button {
+          height: 48px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
